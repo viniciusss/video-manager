@@ -1,11 +1,6 @@
-Video manager for Vimeo
+video-manager
+=============
 
-Actions
- - Auth
-    http://videomanger.vitasoftware.com.br/auth_vimeo
-- Videos
-    List
-    Edit
-    Remove
-    Upload
-    View
+Gerenciador de vídeos do Vimeo.
+
+# Configurar as chaves do Vimeo em /config/prod.php ou /config/dev.php
