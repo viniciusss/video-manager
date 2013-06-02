@@ -1,0 +1,37 @@
+{% extends "base.twig" %}
+
+{% block title %}Videos{% endblock %}
+
+{% block sidebar %}
+    <li>
+        <a href="{{ url('videos-add') }}">Enviar</a>
+    </li>
+{% endblock %}
+
+{% block content %}
+    <h1>My Videos</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        {% if videos is not empty %}
+
+            {% for video in videos %}
+                <tr>
+                    <td>{{ video.name }}</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td>nenhum video foi encontrado</td>
+            </tr>
+        {% endif %}
+        </tbody>
+    </table>
+{% endblock %}

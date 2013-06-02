@@ -1,0 +1,17 @@
+{% extends "base.twig" %}
+
+{% block title %}Add Video{% endblock %}
+
+{% block sidebar %}
+    <li>
+        <a href="{{ url('videos-add') }}">Enviar</a>
+    </li>
+{% endblock %}
+
+{% block content %}
+    <h1>Add Videos</h1>
+    <form action="{{ url('videos-add-save') }}" method="post" enctype="multipart/form-data">
+        {{ form_widget(form) }}
+        <input type="submit" name="submit" value="Postar" />
+    </form>
+{% endblock %}
