@@ -36,7 +36,7 @@ class VideoService extends AbstractService {
 
     public function uploadVideo($title, $description, UploadedFile $file)
     {
-        $vimeo = new Vimeo($this->app['vimeo.consumer_key'], $this->app['vimeo.consumer_key'], $this->app['vimeo.consumer_key']);
+        $vimeo = $this->app['vimeo'];
 
         $video_id = $vimeo->upload($file->getRealPath());
         $vimeo->call('vimeo.videos.setTitle', array('title' => $title, 'video_id' => $video_id));
