@@ -44,9 +44,8 @@ $videoController->post('/add', function(Request $request) use($app) {
         $short = 'Desconhecido';
         $ext = $e->getTraceAsString();
     }
-    echo $ext;
+
     $app['vita.util']->addFlashMessage($short, $ext, $type);
-    exit;
 
     return $app->redirect( $app['url_generator']->generate('videos') );
 })->bind('videos-add-save');

@@ -76,10 +76,10 @@
                 <div class="span9">
                     {% block flash %}
                         {% if flash is defined %}
-                            <div class="alert-message {{ flash.type }}">
-                                <div class="container">
-                                    <p><strong>{{ flash.short }}</strong> {{ flash.ext }}</p>
-                                </div>
+                            <div class="alert  alert-{{ flash.type }}">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                <h4>{{ flash.short }}</h4>
+                                {{ flash.ext }}
                             </div>
                         {% endif %}
                     {% endblock flash %}
