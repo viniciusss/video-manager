@@ -1,0 +1,33 @@
+{% extends 'base.twig' %}
+
+{% block head %}
+    {{ parent() }}
+    <link rel="stylesheet" href="/statics/campus/css/template.css"/>
+{% endblock %}
+
+{% block navbar %}
+<div class="container-narrow">
+    <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <h3 class="muted">Video Manager</h3>
+    </div>
+{% endblock %}
+
+{% block row_fluid %}
+    {% block flash %}
+        {% if flash is defined %}
+            <div class="alert  alert-{{ flash.type }}">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <h4>{{ flash.short }}</h4>
+                {{ flash.ext }}
+            </div>
+        {% endif %}
+    {% endblock flash %}
+    <div class="jumbotron">
+        {% block content %}{% endblock %}
+    </div>
+{% endblock %}

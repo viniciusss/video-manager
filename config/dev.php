@@ -25,5 +25,5 @@ $app['mongodb.options'] = array();
 // Vimeo config
 $app['vimeo.consumer_key'] = '72ba43835dcb0c9c5fcb5b22aab036bae14bfc6c';
 $app['vimeo.consumer_secret'] = '79068f4b5acea73865636813ef5f6664c704448f';
-$app['vimeo.token'] = '4c9d3c6e0f93e28ffeb872b5f8b8b1c1';
-$app['vimeo.token_secret'] = '3caa25d139ace65f9fb807e866cd262e5aa8a223';
+$app['vimeo.token'] = '510db26f93107b562f98fef9e9767746';
+$app['vimeo.token_secret'] = 'cc74c19c5baad2629e2f0833f38ad2676b545a6b';

@@ -1,0 +1,13 @@
+{% extends "admin.twig" %}
+
+{% block title %}Videos - Assistir{% endblock %}
+
+{% block sidebar %}
+    <li>
+        <a href="{{ url('videos-add') }}">Editar</a>
+    </li>
+{% endblock %}
+
+{% block content %}
+    {% include 'vimeo/player.twig' %}
+{% endblock %}

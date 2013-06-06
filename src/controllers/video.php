@@ -42,12 +42,19 @@ $videoController->post('/add', function(Request $request) use($app) {
         $ext = $e->getMessage();
     }catch(\Exception $e){
         $short = 'Desconhecido';
-        $ext = $e->getTraceAsString();
+        $ext = $e->getMessage();
     }
 
     $app['vita.util']->addFlashMessage($short, $ext, $type);
 
     return $app->redirect( $app['url_generator']->generate('videos') );
 })->bind('videos-add-save');
+
+$videoController->get('/watch/{video_id}', function($video_id) use($app) {
+
+    $dadosVideo = $app['service.video']->getVideoData($video_id);
+
+    return $app['twig']->render('videos/watch.twig', array('video' => $dadosVideo ));
+})->bind('videos-watch');
 
 return $videoController;

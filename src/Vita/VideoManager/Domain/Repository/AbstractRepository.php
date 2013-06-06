@@ -25,6 +25,17 @@ abstract class AbstractRepository {
         return $this->collection->find();
     }
 
+    public function findOne($id)
+    {
+        self::toMongoId($id);
+        $data = $this->collection->findOne(array('_id' => $id));
+
+        if ( empty($data) )
+            throw new \Exception('Registro pro id '.$id.' nao encontrado.');
+
+        return $data;
+    }
+
     public function save(array $data)
     {
         if( isset($data['_id']) )

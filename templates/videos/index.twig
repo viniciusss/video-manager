@@ -1,4 +1,4 @@
-{% extends "base.twig" %}
+{% extends "admin.twig" %}
 
 {% block title %}Videos{% endblock %}
 
@@ -10,12 +10,13 @@
 
 {% block content %}
     <h1>My Videos</h1>
-    <table>
+    <table class="table table-condensed table-bordered">
         <thead>
         <tr>
             <th>Id</th>
-            <th>Name</th>
+            <th>Title</th>
             <th>Description</th>
+            <th>Video Id</th>
         </tr>
         </thead>
         <tbody>
@@ -24,7 +25,10 @@
 
             {% for video in videos %}
                 <tr>
-                    <td>{{ video.name }}</td>
+                    <td>{{ video._id }}</td>
+                    <td>{{ video.title }}</td>
+                    <td>{{ video.description }}</td>
+                    <td><a href="{{ url('videos-watch',{'video_id':video._id}) }}">{{ video.video_id }}</a></td>
                 </tr>
             {% endfor %}
         {% else %}

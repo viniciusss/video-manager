@@ -1,0 +1,48 @@
+{% extends 'base.twig' %}
+
+{% block navbar %}
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="brand" href="#">Project name</a>
+                <div class="nav-collapse collapse">
+                    <p class="navbar-text pull-right">
+                        Logged in as <a href="#" class="navbar-link">Username</a>
+                    </p>
+                    <ul class="nav">
+                        <li class="active"><a href="{{ '/admin/'}}">Home</a></li>
+                        <li><a href="{{ url('videos') }}">V&iacute;deos</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block row_fluid %}
+    <div class="span3">
+        <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+                <li class="nav-header">Op&ccedil;&otilde;es</li>
+                {% block sidebar %}{% endblock %}
+            </ul>
+        </div><!--/.well -->
+    </div><!--/span-->
+    <div class="span9">
+        {% block flash %}
+            {% if flash is defined %}
+                <div class="alert  alert-{{ flash.type }}">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <h4>{{ flash.short }}</h4>
+                    {{ flash.ext }}
+                </div>
+            {% endif %}
+        {% endblock flash %}
+        {% block content %}{% endblock %}
+    </div><!--/span-->
+{% endblock %}
